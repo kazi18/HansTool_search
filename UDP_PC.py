@@ -27,15 +27,13 @@ def broadcast_PC():
                     Robot_num.append('http://' + ip + '/dist')
                     Robot_state.append('连接')
             except:
-                if len(Robot_num) == 0:
+                if not Robot_num:
                     Robot_num.append('Error')
                     Robot_num.append(10001)
                 break
         PC_rec.close
         #print(Robot_num)
         return Robot_num, Robot_state
-        Robot_num = []
-        Robot_state = []
     except:
         Robot_num.append('Error')
         Robot_num.append(10000)
